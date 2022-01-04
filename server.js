@@ -57,7 +57,7 @@ async function run() {
 
     app.get("/placeorder/:id", async (req, res) => {
       const result = await product_collection.findOne({
-        _id: ObjectId(req.params.id),
+        _id: req.params.id,
       });
       res.json(result);
     });
